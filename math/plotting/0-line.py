@@ -1,4 +1,5 @@
-mport numpy as np
+
+rt numpy as np
 import matplotlib.pyplot as plt
 
 y = np.arange(0, 11) ** 3

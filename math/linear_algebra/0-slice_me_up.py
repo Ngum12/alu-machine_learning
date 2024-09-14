@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-rr = [9, 8, 2, 3, 9, 4, 1, 0, 3]
+arr = [9, 8, 2, 3, 9, 4, 1, 0, 3]
 arr1 = arr[0:2]  # First two numbers
 arr2 = arr[-5:]  # Last five numbers
 arr3 = arr[1:6]  # 2nd through 6th numbers

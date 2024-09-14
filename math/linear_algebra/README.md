@@ -76,5 +76,3 @@ The project consists of several tasks that you will complete to achieve the lear
 ### Conclusion
 This project provides a hands-on approach to learning linear algebra concepts crucial for machine learning. Follow the guidelines and complete the tasks to enhance your understanding and skills in this area.
 
-Citations:
-[1] https://ppl-ai-file-upload.s3.amazonaws.com/web/direct-files/31180981/10064692-b055-4023-9198-26263274f637/paste.txt

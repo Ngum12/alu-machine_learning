@@ -1,5 +1,5 @@
-
-n that concatenates two matrices along a specific axis"""
+#!/usr/bin/env python3
+"""A function that concatenates two matrices along a specific axis"""
 
 
 import numpy as np

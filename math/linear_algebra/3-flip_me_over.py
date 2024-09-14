@@ -1,4 +1,5 @@
-ng the transpose of a matrix"""
+#!/usr/bin/env python3
+"""Getting the transpose of a matrix"""
 
 
 def matrix_transpose(matrix):

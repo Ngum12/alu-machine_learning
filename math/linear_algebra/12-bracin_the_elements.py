@@ -1,5 +1,5 @@
-
-n that performs element-wise addition, subtraction,
+#!/usr/bin/env python3
+"""A function that performs element-wise addition, subtraction,
 multiplication, and division"""
 
 

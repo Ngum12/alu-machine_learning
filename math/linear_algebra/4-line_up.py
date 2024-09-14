@@ -1,5 +1,5 @@
-
-n that adds two arrays element-wise"""
+#!/usr/bin/env python3
+"""Function that adds two arrays element-wise"""
 
 
 def add_arrays(arr1, arr2):

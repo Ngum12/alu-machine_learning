@@ -1,4 +1,5 @@
-ng the shape of a matrix"""
+#!/usr/bin/env python3
+"""getting the shape of a matrix"""
 
 
 def matrix_shape(matrix):

@@ -1,5 +1,6 @@
+#!/usr/bin/env python3
 
-n that concatenates arrays"""
+"""Function that concatenates arrays"""
 
 
 def cat_arrays(arr1, arr2):

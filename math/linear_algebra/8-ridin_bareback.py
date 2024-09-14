@@ -1,4 +1,5 @@
- function that performs matrix multiplcation"""
+#!/usr/bin/env python3
+"""Writing a function that performs matrix multiplcation"""
 
 
 def mat_mul(mat1, mat2):

@@ -1,4 +1,4 @@
-#Mathematics for Machine Learning
+# Mathematics for Machine Learning
 
 ```
    __  __       _   _       __  __  _     

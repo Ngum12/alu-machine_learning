@@ -1,8 +1,13 @@
-# Mathematics for Machine Learning
+#Mathematics for Machine Learning
 
-<div align="center">
-  <img src="/api/placeholder/800/400" alt="Mathematical equations and probability distributions" />
-</div>
+```
+   __  __       _   _       __  __  _     
+  |  \/  | __ _| |_| |__   |  \/  || |    
+  | |\/| |/ _` | __| '_ \  | |\/| || |    
+  | |  | | (_| | |_| | | | | |  | || |___ 
+  |_|  |_|\__,_|\__|_| |_| |_|  |_||_____|
+                                         
+```
 
 ## 📊 Course Overview
 
@@ -46,9 +51,17 @@ By the end of this course, you will:
 
 ## 🧮 Key Concepts Visualization
 
-<div align="center">
-  <img src="/api/placeholder/600/400" alt="Visual representation of key mathematical and probabilistic concepts" />
-</div>
+```
+    P(A|B)     σ²     ∫  f(x) dx
+      |        |         |
+   ___v___   __v__    ___v___
+  |       | |     |  |       |
+  | Stats | | ML  |  | Calc  |
+  |_______| |_____|  |_______|
+      ^        ^         ^
+      |        |         |
+    E[X]    ∇f(x)    Σ x[i]
+```
 
 ## 💻 Programming Components
 
@@ -98,6 +111,13 @@ For any queries, please contact: d.ngum@alustudent.com
 
 ---
 
-<div align="center">
-  <em>Embark on your journey to mastering the mathematics behind machine learning!</em>
-</div>
+```
+  _____                 _   _                     _ 
+ |  __ \               | | | |                   | |
+ | |  | | ___  ___  ___| |_| |     _   _  ___ ___| |
+ | |  | |/ _ \/ _ \/ _ \ __| |    | | | |/ __/ __| |
+ | |__| |  __/  __/  __/ |_| |____| |_| | (_| (__| |
+ |_____/ \___|\___|\___|\__|______\__,_|\___\___|_|
+                                                   
+``` Mathematics for Machine Learning
+

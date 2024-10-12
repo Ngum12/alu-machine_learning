@@ -91,11 +91,21 @@ print('PHI(90):', n1.cdf(90))
 ```
 
 ## 📈 Interactive Probability Visualizer
-
-<div align="center">
-  <img src="/api/placeholder/600/400" alt="Interactive Probability Distribution Visualizer">
-  <p><em>Imagine an interactive graph here where you can adjust parameters and see probability distributions change in real-time!</em></p>
-</div>
+Imagine an interactive graph here where you can adjust parameters and see probability distributions change in real-time!
+Copy    Normal Distribution
+    
+    0.4 |               
+    0.3 |      ****     
+P(X) 0.2 |    **    **   
+    0.1 |  **        **  
+    0.0 |**____________**
+        -3  -2  -1  0  1  2  3
+             Z-Score
+    
+    μ = 0, σ = 1
+    
+[Slider] μ: -3 [■■■■■■■■■■] 3
+[Slider] σ:  0 [■■■■■■■■■■] 2
 
 ## 🧠 Probability Brain Teaser
 

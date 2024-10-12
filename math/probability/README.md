@@ -92,6 +92,7 @@ print('PHI(90):', n1.cdf(90))
 ## 📈 Interactive Probability Visualizer
 
 Experience the power of probability distributions with our interactive Normal Distribution visualizer:
+
 https://github.com/user-attachments/assets/21c56d89-57f0-440f-ab19-961809fdf8a8
 
 ## 🧠 Probability Brain Teaser

@@ -92,76 +92,7 @@ print('PHI(90):', n1.cdf(90))
 ## 📈 Interactive Probability Visualizer
 
 Experience the power of probability distributions with our interactive Normal Distribution visualizer:
-
-```jsx
-import React, { useState, useCallback } from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-
-const NormalDistribution = () => {
-  const [mean, setMean] = useState(0);
-  const [stdDev, setStdDev] = useState(1);
-
-  const generateData = useCallback(() => {
-    const data = [];
-    for (let x = -4; x <= 4; x += 0.1) {
-      const y = (1 / (stdDev * Math.sqrt(2 * Math.PI))) * 
-                Math.exp(-0.5 * Math.pow((x - mean) / stdDev, 2));
-      data.push({ x: Number(x.toFixed(1)), y: y });
-    }
-    return data;
-  }, [mean, stdDev]);
-
-  return (
-    <div className="p-4 bg-white rounded-lg shadow-md">
-      <h2 className="text-2xl font-bold mb-4 text-center">Interactive Normal Distribution</h2>
-      <ResponsiveContainer width="100%" height={300}>
-        <LineChart data={generateData()} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-          <Line type="monotone" dataKey="y" stroke="#8884d8" dot={false} />
-          <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-          <XAxis dataKey="x" label={{ value: 'X', position: 'bottom' }} />
-          <YAxis label={{ value: 'Probability Density', angle: -90, position: 'insideLeft' }} />
-          <Tooltip />
-        </LineChart>
-      </ResponsiveContainer>
-      <div className="mt-4">
-        <label className="block mb-2">
-          Mean (μ): {mean.toFixed(2)}
-          <input
-            type="range"
-            min="-3"
-            max="3"
-            step="0.1"
-            value={mean}
-            onChange={(e) => setMean(Number(e.target.value))}
-            className="w-full"
-          />
-        </label>
-        <label className="block mb-2">
-          Standard Deviation (σ): {stdDev.toFixed(2)}
-          <input
-            type="range"
-            min="0.1"
-            max="2"
-            step="0.1"
-            value={stdDev}
-            onChange={(e) => setStdDev(Number(e.target.value))}
-            className="w-full"
-          />
-        </label>
-      </div>
-    </div>
-  );
-};
-
-export default NormalDistribution;
-```
-
-This interactive tool allows you to:
-- Adjust the mean (μ) to shift the center of the distribution
-- Modify the standard deviation (σ) to change the spread of the distribution
-- See how these parameters affect the shape of the normal distribution curve in real-time
-
-Experiment with different values to gain intuition about how probability distributions behave!
+https://github.com/user-attachments/assets/21c56d89-57f0-440f-ab19-961809fdf8a8
 
 ## 🧠 Probability Brain Teaser
 

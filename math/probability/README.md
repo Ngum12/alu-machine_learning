@@ -186,5 +186,5 @@ Probability is the backbone of data science and machine learning. As you progres
 
 Remember, in the world of probability, everything is possible – some things are just more likely than others! 
 
-Happy calculating! 🎉🔢🎲
+Happy calculating! 🎉🔢🎲 🎲 Probability Amateur
 

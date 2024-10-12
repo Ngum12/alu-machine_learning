@@ -4,31 +4,15 @@
 
 *By: Alexa Orrico, Software Engineer at Holberton School*
 
+## 📈 Interactive Probability Visualizer
+
+Experience the power of probability distributions with our interactive Normal Distribution visualizer:
+
+https://github.com/user-attachments/assets/21c56d89-57f0-440f-ab19-961809fdf8a8
+
 ## 📊 Project Overview
 
 Welcome to the Probability Amateur project! This exciting journey will take you through the fundamentals of probability theory and its applications in data science and machine learning.
-
-### 🏆 Project Weight: 3
-
-Your score will be updated as you progress through the challenges and master new concepts.
-
-### ⏰ Timeline
-
-- Start: Oct 6, 2024 12:00 AM
-- End: Oct 12, 2024 11:59 PM
-
-## 🎯 Learning Objectives
-
-By the end of this project, you'll be able to explain:
-
-- What probability is and its basic notation
-- Concepts of independence and disjoint events
-- Union and intersection in probability
-- General addition and multiplication rules
-- Probability distributions and their functions
-- Cumulative distribution functions
-- Mean, standard deviation, and variance
-- Common probability distributions (e.g., Normal, Poisson, Binomial)
 
 ## 🧮 Key Concepts Visualization
 
@@ -88,13 +72,6 @@ print('PHI(90):', n1.cdf(90))
 # PSI(90): 0.006206096804434349
 # PHI(90): 0.982902011086006
 ```
-
-## 📈 Interactive Probability Visualizer
-
-Experience the power of probability distributions with our interactive Normal Distribution visualizer:
-
-https://github.com/user-attachments/assets/21c56d89-57f0-440f-ab19-961809fdf8a8
-
 ## 🧠 Probability Brain Teaser
 
 **Click to reveal a probability puzzle!**

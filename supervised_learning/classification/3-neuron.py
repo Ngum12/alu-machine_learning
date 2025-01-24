@@ -1,4 +1,3 @@
-
 #!/usr/bin/env python3
 """
 defines Neuron class that defines

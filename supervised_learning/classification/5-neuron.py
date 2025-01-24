@@ -1,3 +1,4 @@
+
 #!/usr/bin/env python3
 """
 defines Neuron class that defines
@@ -27,6 +28,8 @@ class Neuron:
             calculates the cost of the model using logistic regression
         def evaluate(self, X, Y):
             evaluates the neuron's predictions
+        def gradient_descent(self, X, Y, A, alpha=0.05):
+            calculates one pass of gradient descent on the neuron
     """
 
     def __init__(self, nx):
@@ -145,3 +148,44 @@ class Neuron:
         cost = self.cost(Y, A)
         prediction = np.where(A >= 0.5, 1, 0)
         return (prediction, cost)
+
+    def gradient_descent(self, X, Y, A, alpha=0.05):
+        """
+        calculates one pass of gradient descent on the neuron
+
+        parameters:
+            X [numpy.ndarray with shape (nx, m)]: contains the input data
+                nx is the number of input features to the neuron
+                m is the number of examples
+            Y [numpy.ndarray with shape (1, m)]:
+                contains correct labels for the input data
+            A [numpy.ndarray with shape (1, m)]:
+                 contains the activated output of the neuron for each example
+            alpha [float]: learning rate
+
+        updates the private instance attributes __W and __b
+            using back propagation
+
+        derivative of loss function with respect to A:
+            dA = (-Y / A) + ((1 - Y) / (1 - A))
+        derivative of A with respect to z:
+            dz = A * (1 - A)
+        combining two above with chain rule,
+        derivative of loss function with respect to z:
+            dz = A - Y
+        using chain rule with above derivative,
+        derivative of loss function with respect to __W:
+            d__W = Xdz
+        derivative of loss function with respect to __b:
+            d__b = dz
+
+        one-step of gradient descent updates the attributes with the following:
+            __W = __W - (alpha * d__W)
+            __b = __b - (alpha * d__b)
+        """
+        m = Y.shape[1]
+        dz = (A - Y)
+        d__W = (1 / m) * (np.matmul(X, dz.transpose()).transpose())
+        d__b = (1 / m) * (np.sum(dz))
+        self.__W = self.W - (alpha * d__W)
+        self.__b = self.b - (alpha * d__b)

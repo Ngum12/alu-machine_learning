@@ -29,6 +29,8 @@ class Neuron:
             evaluates the neuron's predictions
         def gradient_descent(self, X, Y, A, alpha=0.05):
             calculates one pass of gradient descent on the neuron
+        def train(self, X, Y, iterations=5000, alpha=0.05):
+            trains the neuron and updates __W, __b, and __A
     """
 
     def __init__(self, nx):
@@ -188,3 +190,36 @@ class Neuron:
         d__b = (1 / m) * (np.sum(dz))
         self.__W = self.W - (alpha * d__W)
         self.__b = self.b - (alpha * d__b)
+
+    def train(self, X, Y, iterations=5000, alpha=0.05):
+        """
+        trains the neuron and updates __W, __b, and __A
+
+        parameters:
+            X [numpy.ndarray with shape (nx, m)]: contains the input data
+                nx is the number of input features to the neuron
+                m is the number of examples
+            Y [numpy.ndarray with shape (1, m)]:
+                contains correct labels for the input data
+            iterations [int]: the number of iterations to train over
+                If iterations is not an int, raise TypeError.
+                If iterations is not positive, raise ValueError.
+            alpha [float]: learning rate
+                If alpha is not an int, raise TypeError.
+                If alpha is not positive, raise ValueError.
+
+        returns:
+            the evaluation of the training data after iterations of training
+        """
+        if type(iterations) is not int:
+            raise TypeError("iterations must be an integer")
+        if iterations <= 0:
+            raise ValueError("iterations must be a positive integer")
+        if type(alpha) is not float:
+            raise TypeError("alpha must be a float")
+        if alpha <= 0:
+            raise ValueError("alpha must be positive")
+        for itr in range(iterations):
+            A = self.forward_prop(X)
+            self.gradient_descent(X, Y, A, alpha)
+        return (self.evaluate(X, Y))

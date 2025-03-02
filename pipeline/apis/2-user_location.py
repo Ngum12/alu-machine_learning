@@ -1,48 +1,41 @@
-#!/usr/bin/env python3
-'''
-Prints the location of a user
-'''
-
-
+#!/usr/bin/python3
 import sys
 import requests
 import time
 
-
-def get_user_location(api_url):
-    """
-    Fetch and print the location of a GitHub user.
-
-    :param api_url: The API URL for the user
-    """
+def main():
+    if len(sys.argv) != 2:
+        print("Usage: {} <GitHub API URL>".format(sys.argv[0]))
+        sys.exit(1)
+    
+    url = sys.argv[1]
     try:
-        response = requests.get(api_url)
-
-        if response.status_code == 200:
-            user_data = response.json()
-            location = user_data.get('location')
-            if location:
-                print(location)
-            else:
-                print('Location not available')
-        elif response.status_code == 404:
-            print('Not found')
-        elif response.status_code == 403:
-            reset_time = int(
-                response.headers.get('X-RateLimit-Reset', time.time()))
-            current_time = int(time.time())
-            wait_time = (reset_time - current_time) // 60
-            print('Reset in {} min'.format(wait_time))
+        response = requests.get(url)
+    except Exception as e:
+        print("Error:", e)
+        sys.exit(1)
+    
+    if response.status_code == 403:
+        # The API returns status 403 when the rate limit is exceeded.
+        # The header "X-RateLimit-Reset" contains the epoch time when the limit resets.
+        reset_time = int(response.headers.get('X-RateLimit-Reset', 0))
+        current_time = int(time.time())
+        minutes = (reset_time - current_time) // 60
+        print("Reset in {} min".format(minutes))
+    elif response.status_code == 404:
+        # The user does not exist.
+        print("Not found")
+    elif response.status_code == 200:
+        data = response.json()
+        # Print the user's location if available, otherwise "Not found"
+        location = data.get('location')
+        if location:
+            print(location)
         else:
-            print('Error: {}'.format(response.status_code))
-    except requests.RequestException as e:
-        print('An error occurred: {}'.format(e))
-
+            print("Not found")
+    else:
+        print("Not found")
 
 if __name__ == '__main__':
-    if len(sys.argv) != 2:
-        print('Usage: ./2-user_location.py <api_url>')
-        sys.exit(1)
+    main()
 
-    api_url = sys.argv[1]
-    get_user_location(api_url)

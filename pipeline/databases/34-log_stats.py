@@ -9,6 +9,19 @@ It counts the total number of logs, counts per HTTP method (GET, POST, PUT, PATC
 from pymongo import MongoClient, errors
 
 def main():
+    """
+    Main function to analyze Nginx logs stored in MongoDB.
+
+    Connects to a MongoDB instance at 'mongodb://127.0.0.1:27017', accesses the 'logs.nginx' collection, 
+    and computes the following statistics:
+    
+    - Total number of log documents.
+    - Number of documents per HTTP method (GET, POST, PUT, PATCH, DELETE).
+    - Number of status check logs (GET requests to the '/status' path).
+
+    The results are printed to the console. In case of connection or query errors, the function
+    prints an error message.
+    """
     try:
         # Use a context manager to ensure the connection is closed properly
         with MongoClient('mongodb://127.0.0.1:27017') as client:
@@ -17,7 +30,7 @@ def main():
             # Get the total number of documents
             total_logs = collection.count_documents({})
 
-            # Define the HTTP methods to count
+            # Define the HTTP methods to count and generate counts for each
             methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
             method_counts = {method: collection.count_documents({"method": method}) for method in methods}
 
